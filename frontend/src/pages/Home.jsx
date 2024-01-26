@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import BlogList from "../components/BlogList";
 import './Home.scss'
 import { useEffect, useState } from "react";
+import { backendUrl } from "../api/api";
 
 
 const Home = ({ blogs, setBlogs }) => {
@@ -15,7 +16,7 @@ const Home = ({ blogs, setBlogs }) => {
 
     const fetchAllBlogs = async () => {
         try {
-            const response = await fetch("http://localhost:3030/api/blogs");
+            const response = await fetch(backendUrl + "/api/blogs");
             const { success, result, error } = await response.json();
             if(!success) throw error;
             return setBlogs(result);
@@ -26,7 +27,7 @@ const Home = ({ blogs, setBlogs }) => {
 
     const fetchBlogsBySearchTerm = async () => {
         try {
-            const response = await fetch(`http://localhost:3030/api/blogs?titleSearch=${search}`);
+            const response = await fetch(`${backendUrl}/api/blogs?titleSearch=${search}`);
             const { success, result, error } = await response.json();
             if(!success) throw error;
             return setBlogs(result);

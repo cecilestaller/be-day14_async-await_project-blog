@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import './Admin.scss'
+import { backendUrl } from "../api/api";
 
 const Admin = ({ blogs, setBlogs }) => {
     const [blogTitle, setBlogTitle] = useState("");
@@ -11,7 +12,7 @@ const Admin = ({ blogs, setBlogs }) => {
     // FETCH --> POST New Blog Endpoint
     const addBlog = async () => {
         try {
-            const url = "http://localhost:3030/api/blogs";
+            const url = backendUrl + "/api/blogs";
     
             // ! MIT FILE muss body aus req formData sein !!
             const formData = new FormData();
