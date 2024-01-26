@@ -7,19 +7,6 @@ import { useEffect, useState } from 'react'
 
 function App() {
   const [blogs, setBlogs] = useState([]);
-  // const [search, setSearch] = useState("");
-
-  // useEffect(() => {
-  //   fetch("http://localhost:3030/api/blogs")
-  //     .then((res) => res.json())
-  //     .then(({ success, result, error }) => {
-  //       if(!success) throw error;
-  //       setBlogs(result);
-  //     })
-  //     .catch((error) => console.log(error))
-  // }, [])
-
-  // console.log(blogs);
 
   return (
     <>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import './BlogList.scss'
+import { backendUrl } from "../api/api";
 
 const BlogList = ({ currentBlogs, updateBlogs }) => {
 
@@ -13,7 +14,7 @@ const BlogList = ({ currentBlogs, updateBlogs }) => {
                     key={index}>
                         <Link to={`/blogs/${singleBlogObj.id}`}>
                             <div>
-                                <img src={"http://localhost:3030/" + singleBlogObj.imgUrl} alt={singleBlogObj.title} />
+                                <img src={backendUrl + "/" + singleBlogObj.imgUrl} alt={singleBlogObj.title} />
                             </div>
                             <h3>{singleBlogObj.title}</h3>
                         </Link>

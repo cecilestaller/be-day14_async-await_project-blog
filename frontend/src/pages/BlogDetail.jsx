@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import './BlogDetails.scss'
+import { backendUrl } from "../api/api";
 
 const BlogDetail = ({ blogs, setBlogs }) => {
 
@@ -20,7 +21,7 @@ const BlogDetail = ({ blogs, setBlogs }) => {
             {filteredBlog.map((blog, index) => {
                 return (
                     <div key={index}>
-                        <img src={"http://localhost:3030/" + blog.imgUrl} alt={blog.title} />
+                        <img src={backendUrl + "/" + blog.imgUrl} alt={blog.title} />
                         <h2>{blog.title}</h2>
                         <h4>Topic: {blog.topic}</h4>
                         <p>{blog.content}</p>
